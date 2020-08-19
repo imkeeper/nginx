@@ -132,36 +132,41 @@ void ngx_cdecl ngx_log_debug_core(ngx_log_t *log, ngx_err_t err,
 #if (NGX_HAVE_VARIADIC_MACROS)
 
 #define ngx_log_debug0(level, log, err, fmt)                                  \
-        ngx_log_debug(level, log, err, fmt)
+        ngx_log_debug(level, log, err, "[%s+%d,%s]  "fmt, __FILE__, __LINE__, __func__)
 
 #define ngx_log_debug1(level, log, err, fmt, arg1)                            \
-        ngx_log_debug(level, log, err, fmt, arg1)
+        ngx_log_debug(level, log, err, "[%s+%d,%s]  "fmt, __FILE__, __LINE__, __func__,  \
+                        arg1)
 
 #define ngx_log_debug2(level, log, err, fmt, arg1, arg2)                      \
-        ngx_log_debug(level, log, err, fmt, arg1, arg2)
+        ngx_log_debug(level, log, err, "[%s+%d,%s]  "fmt, __FILE__, __LINE__, __func__,  \
+                        arg1, arg2)
 
 #define ngx_log_debug3(level, log, err, fmt, arg1, arg2, arg3)                \
-        ngx_log_debug(level, log, err, fmt, arg1, arg2, arg3)
+        ngx_log_debug(level, log, err, "[%s+%d,%s]  "fmt, __FILE__, __LINE__, __func__,  \
+                       arg1, arg2, arg3)
 
 #define ngx_log_debug4(level, log, err, fmt, arg1, arg2, arg3, arg4)          \
-        ngx_log_debug(level, log, err, fmt, arg1, arg2, arg3, arg4)
+        ngx_log_debug(level, log, err, "[%s+%d,%s]  "fmt, __FILE__, __LINE__, __func__,  \
+                       arg1, arg2, arg3, arg4)
 
 #define ngx_log_debug5(level, log, err, fmt, arg1, arg2, arg3, arg4, arg5)    \
-        ngx_log_debug(level, log, err, fmt, arg1, arg2, arg3, arg4, arg5)
+        ngx_log_debug(level, log, err, "[%s+%d,%s]  "fmt, __FILE__, __LINE__, __func__,  \
+                       arg1, arg2, arg3, arg4, arg5)
 
 #define ngx_log_debug6(level, log, err, fmt,                                  \
                        arg1, arg2, arg3, arg4, arg5, arg6)                    \
-        ngx_log_debug(level, log, err, fmt,                                   \
+        ngx_log_debug(level, log, err, "[%s+%d,%s]  "fmt, __FILE__, __LINE__, __func__,  \
                        arg1, arg2, arg3, arg4, arg5, arg6)
 
 #define ngx_log_debug7(level, log, err, fmt,                                  \
                        arg1, arg2, arg3, arg4, arg5, arg6, arg7)              \
-        ngx_log_debug(level, log, err, fmt,                                   \
+        ngx_log_debug(level, log, err, "[%s+%d,%s]  "fmt, __FILE__, __LINE__, __func__,  \
                        arg1, arg2, arg3, arg4, arg5, arg6, arg7)
 
 #define ngx_log_debug8(level, log, err, fmt,                                  \
                        arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)        \
-        ngx_log_debug(level, log, err, fmt,                                   \
+        ngx_log_debug(level, log, err, "[%s+%d,%s]  "fmt, __FILE__, __LINE__, __func__,  \
                        arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
 
 
